@@ -68,7 +68,23 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+				<finalName>app</finalName>
+				</configuration>
 			</plugin>
+			
+			
+			<plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>dockerfile-maven-plugin</artifactId>
+            <version>1.3.6</version>
+            <configuration>
+                <repository>sseenas/slccoffeeshop</repository>
+	<buildArgs>
+		<JAR_FILE>target/slccoffeeshop.jar</JAR_FILE>
+	</buildArgs>
+            </configuration>
+        </plugin>
 		</plugins>
 	</build>
 
